@@ -1,17 +1,23 @@
 import React from 'react'
-import ReactDom from 'react-dom'
-import List from './list.js'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch
+} from "react-router-dom";
 import './css/bootstrap/dist/css/bootstrap.css'
 
 class Button extends React.Component {
   render() {
     return (
-      <button type = "button"
-              className = {this.props.class}
-              onClick = {this.props.clickMe}
-      >
-        {this.props.value}
-      </button>
+      <Link to = {this.props.value}>
+        <button type = "button"
+                className = {this.props.class}
+                onClick = {this.props.clickMe}
+        >
+          {this.props.value}
+        </button>
+      </Link>
     )
   }
 }
@@ -19,7 +25,7 @@ class Button extends React.Component {
 class Menu extends React.Component {
   constructor(props) {
     super(props);
-    let valueList = ["Categories", "Carriers", "Issue List", "Browse Know-How", "User Management"];
+    let valueList = ["Categories", "Carriers", "IssueList", "Browse", "Users"];
     let classList = ["list-group-item list-group-item-action", "list-group-item list-group-item-action",
      "list-group-item list-group-item-action", "list-group-item list-group-item-action",
       "list-group-item list-group-item-action", "list-group-item list-group-item-action"];
@@ -37,10 +43,6 @@ class Menu extends React.Component {
     this.setState({
       classes: classList,
     })
-    ReactDom.render(
-      <List />,
-      document.getElementById("content")
-    )
 
   }
 

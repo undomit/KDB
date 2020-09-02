@@ -1,21 +1,10 @@
-import React from 'react'
+import React,{Suspense} from 'react'
 import ReactDom from 'react-dom'
-import Menu from './UI/menu'
-import Navbar from './UI/navbar'
-import Jumbotron from './UI/Jumbotron'
+import App from './App'
 import './index.css'
+import {BrowserRouter} from "react-router-dom";
 
 ReactDom.render(
-  <Menu />,
-  document.getElementById('menu')
-)
-
-ReactDom.render(
-  <Navbar />,
-  document.getElementById('nav')
-)
-
-ReactDom.render(
-  <Jumbotron />,
-  document.getElementById('content')
+  <App />,
+  document.getElementById('root')
 )
