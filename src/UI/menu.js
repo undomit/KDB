@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import './css/bootstrap/dist/css/bootstrap.css'
 
 class Button extends React.Component {

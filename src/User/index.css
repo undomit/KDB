@@ -2,8 +2,13 @@ body {
   background-color: #747474;
 }
 
+#user {
+  width:5%;
+  height:5%;
+}
+
 #logo {
-  
+
 }
 
 .center-img {

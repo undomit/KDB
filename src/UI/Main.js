@@ -26,7 +26,7 @@ class Main extends React.Component {
             </div>
             <div className = "col-sm-7">
               <Switch>
-                <Route exact path = "/">
+                <Route exact path = "/Main">
                   <Jumbotron />
                 </Route>
                 <Route path = "/Categories">

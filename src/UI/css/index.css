@@ -2,8 +2,11 @@ body {
   background-color: #747474;
 }
 
-#logo {
-  
+#user {
+  width: 5%;
+  height: 7%;
+  position:fixed;
+  left: 1250px;
 }
 
 .center-img {
