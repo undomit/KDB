@@ -16,6 +16,7 @@ To run:
 **BACK-END DJANGO REST API:**
 
 1. Install Python3 *https://www.python.org/downloads/*
+2. Go to /kdb-be and run *pip install -r requirements.txt*
 2. Run kdb-be/kdb/py manage.py runserver
 3. Access localhost:8000/categories/   (list)    
           localhost:8000/categories/x  (detailed view)
