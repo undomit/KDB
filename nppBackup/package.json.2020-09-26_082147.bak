@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "proxy": "http://localhost:8000",
   "scripts": {
     "dev": "webpack --mode development --watch ./kdb/kdb_fe/src/index.js --output ./kdb/kdb_fe/static/frontend/main.js",
     "build": "webpack --mode production ./kdb/kdb_fe/src/index.js --output ./kdb/kdb_fe/static/frontend/main.js"

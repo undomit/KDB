@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     return (
       <nav id = "nav" className = "navbar navbar-light bg-light spaceBottom">
         <div className = "navbar-brand">
-          <Link to = "/Main">
+          <Link to = "/main">
             <img type = "button" id = "logo" src = {mainLogo} width="50" height="50" className = "d-inline-block align-top" alt=""/>
             <span className = "navbar-text" id = "top-text">Knowledge Database</span>
           </Link>
