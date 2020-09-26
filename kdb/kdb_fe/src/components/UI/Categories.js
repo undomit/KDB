@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './css/index.css'
 import './css/bootstrap/dist/css/bootstrap.css'
 import CategoryAdd from './CategoryAdd.js'
@@ -9,46 +9,66 @@ import {
   Switch
 } from "react-router-dom";
 
+let url = '/api/category/all';
+
 class Categories extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      data: [],
+      loaded: false,
+      message: "Loading...",
+    }
+  }
+
+  componentDidMount() {
+    fetch(url,
+      {
+        method: 'GET'
+      }
+    ).then(response => {
+        if (response.status > 400) {
+          return this.setState({
+            message: "Something went wrong...",
+          });
+        }
+        return response.json();
+    })
+    .then(data => {
+      this.setState({
+        data: data,
+        loaded: true,
+        message: "Loaded",
+      })
+    });
+  }
+
   render() {
     return (
-      <div className = 'container'>
-        <div>
-          <h1>Categories List</h1>
-          <Link to = "/Categories/add">
-            <button>Add</button>
-          </Link>
-        </div>
-        <table class="table">
-          <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
-          </thead>
+      <div className = "container">
+        <table className = "table table-dark">
           <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+              <th scope = "col">ID</th>
+              <th scope = "col">Name</th>
+              <th scope = "col">Created</th>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+            {this.state.data.map(element => {
+              return (
+                <tr key = {element.id}>
+                  <td scope = "row">{element.id}</td>
+                  <td>{element.name}</td>
+                  <td>{element.created}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
+        <Link to = "/Categories/add">
+          <button className="btn btn-primary">
+            Add Category
+          </button>
+        </Link>
       </div>
     )
   }

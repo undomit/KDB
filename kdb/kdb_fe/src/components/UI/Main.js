@@ -27,25 +27,25 @@ class Main extends React.Component {
             </div>
             <div className = "col-sm-7">
               <Switch>
-                <Route exact path = "/Main">
+                <Route exact path = "/main">
                   <Jumbotron />
                 </Route>
-                <Route exact path = "/Categories">
+                <Route exact path = "/categories/list">
                   <Categories />
                 </Route>
-                <Route exact path = "/Categories/add">
+                <Route exact path = "/categories/add">
                   <CategoryAdd />
                 </Route>
-                <Route exact path = "/Carriers">
+                <Route exact path = "/carriers/list">
                   <Carriers />
                 </Route>
-                <Route exact path = "/IssueList">
+                <Route exact path = "/issues/list">
                   <IssueList />
                 </Route>
-                <Route exact path = "/Browse">
+                <Route exact path = "/browse/list">
                   <Browse />
                 </Route>
-                <Route exact path = "/Users">
+                <Route exact path = "/users/list">
                   <Users />
                 </Route>
               </Switch>

@@ -21,7 +21,7 @@ class Menu extends React.Component {
   constructor(props) {
     super(props);
     let valueList = ["Categories", "Carriers", "IssueList", "Browse", "Users"];
-    let linkList = ["/Categories", "/Carriers", "/IssueList", "/Browse", "/Users"];
+    let linkList = ["/categories/list", "/carriers/list", "/issues/list", "/browse/list", "/users/list"];
     let classList = ["list-group-item list-group-item-action", "list-group-item list-group-item-action",
      "list-group-item list-group-item-action", "list-group-item list-group-item-action",
       "list-group-item list-group-item-action", "list-group-item list-group-item-action"];
@@ -49,7 +49,7 @@ class Menu extends React.Component {
       elements.push(<Button key = {i}
                             value = {valueList[i]}
                             class = {classList[i]}
-                            link = {linkList[i]}
+                            link = {this.state.links[i]}
                             clickMe = {this.handleClick.bind(this, i)}
                     />)
     }
