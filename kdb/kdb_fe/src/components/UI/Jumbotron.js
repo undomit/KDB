@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './css/bootstrap/dist/css/bootstrap.css'
 
 
@@ -10,7 +11,9 @@ class Jumbotron extends React.Component {
         <p className = "lead">Explore internal know-how and/or contribute. Let's do this together!</p>
         <hr className = "my-4"></hr>
         <p>Some other text</p>
-        <div className = "btn btn-primary btn-lg" role="button">Browse</div>
+        <Link to = "/browse/list">
+          <div className = "btn btn-primary btn-lg" role="button">Browse</div>
+        </Link>
       </div>
     );
   }

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 from django.shortcuts import render
-from .serializers import CategorySerializer, TopicSerializer
-from .models import Category, Topic
+from .serializers import CategorySerializer, CarrierSerializer, IssueSerializer, UserSerializer
+from .models import Category, Carrier, Issue, User
 from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -14,12 +14,26 @@ class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-class TopicList(generics.ListCreateAPIView):
-    queryset = Topic.objects.all()
-    serializer_class = TopicSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['category']
+class CarrierList(generics.ListCreateAPIView):
+    queryset = Carrier.objects.all()
+    serializer_class = CarrierSerializer
 
-class TopicDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Topic.objects.all()
-    serializer_class = TopicSerializer
+class CarrierDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Carrier.objects.all()
+    serializer_class = CarrierSerializer
+
+class IssueList(generics.ListCreateAPIView):
+    queryset = Issue.objects.all()
+    serializer_class = IssueSerializer
+
+class IssueDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Issue.objects.all()
+    serializer_class = IssueSerializer
+
+class UserList(generics.ListCreateAPIView):
+    queryset =  User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
