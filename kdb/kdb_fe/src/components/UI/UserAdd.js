@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/index.css'
-import './css/bootstrap/dist/css/bootstrap.css'
+//import './css/bootstrap/dist/css/bootstrap.css'
 import {Redirect} from 'react-router-dom'
 import ErrorMessage from '../Utils/ErrorMessage.js'
 

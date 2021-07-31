@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import './css/bootstrap/dist/css/bootstrap.css'
+//import './css/bootstrap/dist/css/bootstrap.css'
 
 class Button extends React.Component {
   render() {
@@ -20,11 +20,11 @@ class Button extends React.Component {
 class Menu extends React.Component {
   constructor(props) {
     super(props);
-    let valueList = ["Categories", "Carriers", "IssueList", "Browse", "Users"];
-    let linkList = ["/categories/list", "/carriers/list", "/issues/list", "/browse/list", "/users/list"];
+    let valueList = ["Categories", "Carriers", "IssueList", "Users"];
+    let linkList = ["/categories/list", "/carriers/list", "/issues/list", "/users/list"];
     let classList = ["list-group-item list-group-item-action", "list-group-item list-group-item-action",
      "list-group-item list-group-item-action", "list-group-item list-group-item-action",
-      "list-group-item list-group-item-action", "list-group-item list-group-item-action"];
+     "list-group-item list-group-item-action"];
     this.state = {
       values: valueList,
       classes: classList,
@@ -35,7 +35,7 @@ class Menu extends React.Component {
   handleClick(i) {
     let classList = ["list-group-item list-group-item-action", "list-group-item list-group-item-action",
      "list-group-item list-group-item-action", "list-group-item list-group-item-action",
-      "list-group-item list-group-item-action", "list-group-item list-group-item-action"];
+      "list-group-item list-group-item-action"];
     classList[i] = "list-group-item list-group-item-action active";
     this.setState({
       classes: classList,

@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/index.css'
-import './css/bootstrap/dist/css/bootstrap.css'
+//import './css/bootstrap/dist/css/bootstrap.css'
 import {Link} from "react-router-dom";
 
 let url = '/api/user/all';

@@ -10,17 +10,46 @@ class App extends React.Component {
     this.state = {
       isLoggedIn: false,
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleLogOut = this.handleLogOut.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
-  handleSubmit() {
-    this.setState({
-      isLoggedIn: true,
+  handleLogin(username, password) {
+    let url = 'http://localhost:8000/api/login/';
+
+    let credentials = {
+      username: username,
+      password: password
+    };
+    
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
     })
+    .then(response => {
+      if (response.status >= 400) {
+        throw new Error()
+      }
+    })
+    .then((data) => {
+      this.setState({
+        isLoggedIn: true,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      this.setState({
+        isLoggedIn: false
+      })
+    })
+    
   }
 
-  handleLogOut() {
+  handleLogout() {
     this.setState({
       isLoggedIn: false,
     })
@@ -29,13 +58,11 @@ class App extends React.Component {
   render() {
     if (this.state.isLoggedIn) {
       return (
-        <Main logOut = {this.handleLogOut}/>
+        <Main logOut = {this.handleLogout}/>
       );
     }
     return (
-      <Login
-        onSubmit = {this.handleSubmit}
-      />
+      <Login logIn = {this.handleLogin}/>
     )
   }
 }

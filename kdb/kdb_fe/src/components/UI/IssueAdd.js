@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/index.css'
-import './css/bootstrap/dist/css/bootstrap.css'
+//import './css/bootstrap/dist/css/bootstrap.css'
 import {Redirect} from 'react-router-dom'
 import ErrorMessage from '../Utils/ErrorMessage.js'
 
@@ -77,7 +77,7 @@ class IssueAdd extends React.Component {
                    })
                  }
             />
-            <label for="exampleFormControlTextarea1">Description</label>
+            <label htmlFor="exampleFormControlTextarea1">Description</label>
             <textarea className ="form-control"
                       id="exampleFormControlTextarea1"
                       rows="10"
@@ -86,7 +86,7 @@ class IssueAdd extends React.Component {
                         description: e.target.value,
                       })}>
             </textarea>
-            <label for="exampleFormControlTextarea1">Solution</label>
+            <label htmlFor="exampleFormControlTextarea1">Solution</label>
             <textarea className ="form-control"
                       id="exampleFormControlTextarea1"
                       rows="10"

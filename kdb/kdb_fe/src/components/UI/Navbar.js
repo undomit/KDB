@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {Dropdown, Button, ButtonGroup} from 'react-bootstrap'
 import mainLogo from './img/logo_red.png'
 import userImg from './img/user.jpg'
-import './css/bootstrap/dist/css/bootstrap.css'
+//import './css/bootstrap/dist/css/bootstrap.css'
 
 class Navbar extends React.Component {
 
@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     return (
       <nav id = "nav" className = "navbar navbar-light bg-light spaceBottom">
         <div className = "navbar-brand">
-          <Link to = "/main">
+          <Link to = "/">
             <img type = "button" id = "logo" src = {mainLogo} width="50" height="50" className = "d-inline-block align-top" alt=""/>
             <span className = "navbar-text" id = "top-text">Knowledge Database</span>
           </Link>

@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/index.css'
-import './css/bootstrap/dist/css/bootstrap.css'
+//import './css/bootstrap/dist/css/bootstrap.css'
 import {Link} from "react-router-dom";
 
 let url = '/api/carrier/all';
@@ -47,7 +47,7 @@ class Carriers extends React.Component {
               <th scope = "col">Name</th>
               <th scope = "col">Created</th>
             </tr>
-            {this.state.data.map(element => {
+            {this.state?.data?.map(element => {
               return (
                 <tr key = {element.id}>
                   <td scope = "row">{element.id}</td>

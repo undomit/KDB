@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Category, Carrier, Issue, User
+from .models import Category, Carrier, Issue
+from django.contrib.auth.models import User
 
 class CategorySerializer(serializers.ModelSerializer):
 
@@ -20,4 +21,4 @@ class IssueSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'firstName', 'lastName', 'created']
+        fields = ['id', 'username', 'email']

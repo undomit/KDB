@@ -37,7 +37,7 @@ class Issue(models.Model):
 
     def __str__(self):
         return self.name
-
+"""
 class User(models.Model):
     username = models.CharField(max_length = 30)
     password = models.CharField(max_length = 30)
@@ -48,3 +48,4 @@ class User(models.Model):
 
     def __str__(self):
         return self.username
+"""

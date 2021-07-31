@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/index.css'
-import './css/bootstrap/dist/css/bootstrap.css'
+//import './css/bootstrap/dist/css/bootstrap.css'
 import {Link} from "react-router-dom";
 
 let url = '/api/category/all';
@@ -59,7 +59,7 @@ class Categories extends React.Component {
                       </Link>
                   </td>
                   <td>{element.kind}</td>
-                  <td>{element.created.toLocaleDateString()}</td>
+                  <td>{element.created}</td>
                   <td>{element.parent_id}</td>
                 </tr>
               );

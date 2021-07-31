@@ -17,13 +17,14 @@ import {
   Route,
   Switch
 } from "react-router-dom";
+import IssueDetail from './IssueDetail'
 
 
 class Main extends React.Component {
   render() {
     return (
       <div>
-        <Router>
+      
           <Navbar />
           <div className = "row">
             <div id = "menu" className = "col-sm-3">
@@ -31,7 +32,7 @@ class Main extends React.Component {
             </div>
             <div className = "col-sm-7">
               <Switch>
-                <Route exact path = "/main"
+                <Route exact path = "/"
                        children = {<Jumbotron />}
                 />
                 <Route path = "/categories/list"
@@ -53,6 +54,9 @@ class Main extends React.Component {
                 <Route exact path = "/issues/list">
                   <IssueList />
                 </Route>
+                <Route exact path = "/issue/:id"
+                    children = {<IssueDetail />}
+                />
                 <Route exact path = "/issues/add">
                   <IssueAdd />
                 </Route>
@@ -68,7 +72,7 @@ class Main extends React.Component {
               </Switch>
             </div>
           </div>
-        </Router>
+        
       </div>
     );
   }
